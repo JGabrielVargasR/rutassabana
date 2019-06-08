@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="favicon.png"/>
+  <title>RutasSabana - Rutas de Transporte Intermunicipal</title>
+   <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/simple-sidebar.css" rel="stylesheet">
+  
+</head>
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><img class="logo" src="svg/logo.svg"/></div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/query_routes.svg"/>Rutas</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/query_stops.svg"/>Paraderos</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/travel_planning.svg"/>Planear Ruta</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/help.svg"/>Ayuda</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/about.svg"/>Acerca de</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn" id="menu-toggle">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+      </nav>
+	  
+	    <div id="container">  
+			<iframe src="html/mapa.html" class="iframe"></iframe>
+		</div>
+		
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>
