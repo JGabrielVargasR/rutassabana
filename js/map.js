@@ -7,7 +7,7 @@ var OpenStreetMap = L.tileLayer.provider('OpenStreetMap').addTo(mymap);
 var baseMaps = {
 	"OpenStreetMap": OpenStreetMap,
 	"Google Maps": GoogleStreetMap,
-	"Google Traffic": GoogleTrafficMap,
+	"Google Traffic": GoogleTrafficMap
 	
 };
 var overlayMaps = {
