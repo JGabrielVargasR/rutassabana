@@ -3,7 +3,7 @@ var mpio_style = function (feature) {
         return {fillColor: 'red', fillOpacity: 0.5, color: 'red', weight: 2};
       } else if(feature.properties.nombre === 'MOSQUERA'){
         return {fillColor: 'orange', fillOpacity: 0.5, color: 'orange', weight: 2};
-      } else if(feature.properties.nombre === 'BOGOTÁ D.C.'){
+      } else if(feature.properties.nombre === 'BOGOTÁ, D.C.'){
         return {fillColor: 'blue', fillOpacity: 0.5, color: 'blue', weight: 2};
       } else if(feature.properties.nombre === 'FUNZA'){
         return {fillColor: 'green', fillOpacity: 0.5, color: 'green', weight: 2};
