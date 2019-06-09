@@ -13,6 +13,8 @@
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
+  <!--Return to Home script-->
+  <script src="js/functions.js"></script>
   
 </head>
 
@@ -24,8 +26,8 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"><img class="logo" src="svg/logo.svg"/></div>
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/query_routes.svg"/>Rutas</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/query_stops.svg"/>Paraderos</a>
+        <a href="html/rutas.html" target="iframe" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/query_routes.svg"/>Rutas</a>
+        <a href="html/paraderos.html" target="iframe" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/query_stops.svg"/>Paraderos</a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/travel_planning.svg"/>Planear Ruta</a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/help.svg"/>Ayuda</a>
         <a href="#" class="list-group-item list-group-item-action bg-light"><img class="icon" src="svg/about.svg"/>Acerca de</a>
@@ -40,10 +42,13 @@
         <button class="btn" id="menu-toggle">
 			<span class="navbar-toggler-icon"></span>
 		</button>
+		<button class="btn" id="home" onclick="gohome()">
+			<span class="glyphicon glyphicon-home"></span>
+		</button>
       </nav>
 	  
 	    <div id="container">  
-			<iframe src="html/mapa.html" class="iframe"></iframe>
+			<iframe src="html/mapa.html" class="iframe" name="iframe"></iframe>
 		</div>
 		
     </div>

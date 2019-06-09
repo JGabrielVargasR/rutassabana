@@ -1,0 +1,34 @@
+<!DOCTYPE HTMl>
+
+<html lang="en">
+	<head>
+	<title>Mapas</title>
+		<meta charset="utf-8">
+		<link href="../css/simple-sidebar.css" rel="stylesheet">
+		<link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
+		<script src="../vendor/leaflet/leaflet.js"></script>
+		<script src="../vendor/leaflet/leaflet-providers.js"></script>
+
+		<script src="../vendor/jquery/jquery.js"></script>
+		
+		<script src="../vendor/spatiasql/spatiasql.js"></script>		
+		<script src="../js/fbt_library.js"></script>
+		<script src="../js/styles.js"></script>
+		
+		<link rel="shortcut icon" href="../favicon.png"/>
+
+	</head>
+	<body>
+		
+		<div class="contenido">
+			<input class="text_box" id="myInput" type="text" placeholder="Buscar ruta por origen o destino...">
+			<button type="button" class="btn btn-primary btn-sm" onclick="getLocation()"><img src="../images/gps_icon.png" alt="locate_me" width="15">&nbsp;&nbsp;Busqueda por Ubicación</button>
+		</div>
+		<div id="map" class="map2"></div>
+		<script src="../js/location_map.js"></script>	
+		<script src="../js/filtro.js"></script>		
+		
+	</body>
+</html>
