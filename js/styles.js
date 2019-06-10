@@ -36,7 +36,3 @@ var markerIcon = L.icon({
     shadowAnchor: [4, 62],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
-
-var ruta_style(
-	color: blue, weight: 2
-)
