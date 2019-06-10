@@ -76,11 +76,12 @@ Estilos Personalizados
 .contenido{
 	height: calc(100vh - 2vh - 1.5rem);
 	width:100%;
-	padding-top:10px;
+	/*padding-top:10px;*/
 	margin:0;
 	float:left;
 	text-align:center;
-	overflow-x: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 
@@ -117,7 +118,6 @@ Estilos Personalizados
 	height: 10vh;
 	max-height:50px;
 	padding-right: 20px;
-	padding-left:0;
 	}
 	
 .logo {
