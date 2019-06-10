@@ -8,8 +8,6 @@ var baseMaps = {
 var overlayMaps = {
 };
 
-var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(mymap);
-
 var layers = {};
 var db_path = '../sqlite/prueba.sqlite';
 

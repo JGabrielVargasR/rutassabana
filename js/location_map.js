@@ -10,9 +10,7 @@ function getLocation(){
 				
 		map.locate({setView: true, maxZoom: 18});
 		function onLocationFound(e) {
-			var radius = e.accuracy/2;
 			var marker = L.marker(e.latlng).addTo(map);
-			var circle = L.circle(e.latlng, radius).addTo(map);
 			}
 		map.on('locationfound', onLocationFound);
 	}else {
