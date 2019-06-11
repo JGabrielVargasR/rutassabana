@@ -1,0 +1,76 @@
+<!DOCTYPE HTMl>
+
+<html lang="es_CO">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="../css/simple-sidebar.css" rel="stylesheet">
+		<link href="../vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+		
+		<link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
+		<script src="../vendor/leaflet/leaflet.js"></script>
+		<script src="../vendor/leaflet/leaflet-providers.js"></script>
+
+		<script src="../vendor/jquery/jquery.js"></script>
+		
+		<script src="../vendor/spatiasql/spatiasql.js"></script>		
+		<script src="../js/fbt_library.js"></script>
+		<script src="../js/styles.js"></script>
+		
+		<link rel="shortcut icon" href="../favicon.png"/>
+	</head>
+	<body>
+ 
+
+		<section class="wrapper">
+			<ul class="tabs">
+				<li><a href="#tab1">Planeador de Ruta</a></li>
+				<li><a href="#tab2">Mapa</a></li>
+
+			</ul>
+			<div class="clr"></div>
+				<section class="block">
+					<article id="tab1" class="contenido">
+						<div class="sticky">
+						<select name="origen" class = "lista">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="fiat">Fiat</option>
+							<option value="audi">Audi</option>
+						</select>
+						<select name="destino" class = "lista">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="fiat">Fiat</option>
+							<option value="audi">Audi</option>
+						</select>
+						<button type="button" class="btn btn-primary"><img src="../images/gps_icon.png" alt="locate_me" width="10">&nbsp;&nbsp;Buscar Ruta</button>
+						</div>
+					</article>
+					<article id="tab2">
+						<div id="map" class="map2"></div>
+						<script src="../js/location_map.js"></script>
+					</article>
+				</section>
+		</section>
+
+	
+	<script>
+		$(function(){
+			$('ul.tabs li:first').addClass('active');
+			$('.block article').hide();
+			$('.block article:first').show();
+			$('ul.tabs li').on('click',function(){
+			$('ul.tabs li').removeClass('active');
+			$(this).addClass('active')
+			$('.block article').hide();
+			var activeTab = $(this).find('a').attr('href');
+			$(activeTab).show();
+			return false;
+			});
+		})	
+	</script>
+
+
+	</body>
+</html>
