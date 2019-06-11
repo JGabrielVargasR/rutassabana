@@ -13,6 +13,3 @@ var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 var layers = {};
 var db_path = '../sqlite/prueba.sqlite';
 var municipios = execute_query(db_path,"select AsGeoJSON(Geometry), nombre from p_municipio",mymap,'Municipios',['#query-output',false],mpio_style);
-
-
-
