@@ -1,5 +1,5 @@
 var db_path = "../sqlite/prueba.sqlite";
-var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio from pt_parada, p_municipio where id_mpio = mpio_divip order by id_parada";
+var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio , ST_X(geom) as longitude, ST_Y(geom) as latitude from pt_parada, p_municipio  where id_mpio = mpio_divip order by id_parada";
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', db_path, true);
@@ -15,8 +15,10 @@ xhr.onload = function(e) {
 		var name = elements[i][1];
 		var id = elements[i][0];
 		var mpio = elements[i][3];
+		var longitude = elements[i][4];
+		var latitude = elements[i][5];
 		
-		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-warning btn-sm btn_parada">'+'<p class="h0">'+name+'</p>'+'<p>Municipio: '+mpio+'</p>'+'</button>';
+		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-warning btn-sm btn_parada" onclick="loadPoint('+"'"+id+"',"+latitude+","+longitude+')">'+'<p class="h0">'+name+'</p>'+'<p class="descrip">Municipio: '+mpio+'</p>'+'</button>';
 		}
 	}
 		

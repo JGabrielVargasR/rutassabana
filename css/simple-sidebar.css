@@ -184,7 +184,14 @@ article {
 .h0{
 	font-size:15px;
 	font-weight:bold;
-	color: white;	
+	color: white;
+	margin-bottom:5px;	
+}
+
+.descrip{
+	font-size:12px;
+	color: white;
+	margin:0;
 }
 
 .lista{
