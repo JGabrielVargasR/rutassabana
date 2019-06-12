@@ -1,5 +1,5 @@
 var db_path = "../sqlite/prueba.sqlite";
-var thequery = "select id_ruta, nombre, distancia, origen, destino, tiempo_promedio, tarifa from l_ruta order by id_ruta";
+var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio from pt_parada, p_municipio where id_mpio = mpio_divip order by id_parada";
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', db_path, true);
@@ -13,9 +13,10 @@ xhr.onload = function(e) {
 	
 	for (i = 0; i < elements.length; i++) {
 		var name = elements[i][1];
-		var id = elements[i][0];		
+		var id = elements[i][0];
+		var mpio = elements[i][3];
 		
-		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-info btn-sm btn_ruta" onclick = "loadRoute('+"'"+id+"'"+')">'+name+'</button>';
+		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-warning btn-sm btn_parada">'+'<p class="h0">'+name+'</p>'+'<p>Municipio: '+mpio+'</p>'+'</button>';
 		}
 	}
 		
