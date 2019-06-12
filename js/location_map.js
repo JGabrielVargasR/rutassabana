@@ -13,12 +13,14 @@ function getLocation(){
 			var marker = L.marker(e.latlng).addTo(map);
 			}
 		map.on('locationfound', onLocationFound);
+		
+		
 	}else {
 		alert("Geolocation API is not supported in your browser. :(");
 	}
 }
 
 function loadPoint(id, latitude, longitude){
-	var ruta = execute_query(db_path,"select asGeoJSON(geom), id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio from pt_parada, p_municipio where id_mpio = mpio_divip and id_parada = '"+id+"'",map,'Parada',['#query-output',false],markerIcon);
+	var ruta = execute_query(db_path,"select asGeoJSON(geom), id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio from pt_parada, p_municipio where id_mpio = mpio_divip and id_parada = '"+id+"'",map,'Parada',['#query-output',false],stopIcon);
 	map.setView([latitude, longitude], 18);
 	}
