@@ -1,5 +1,5 @@
 var db_path = "../sqlite/prueba.sqlite";
-var thequery = "select id_ruta, nombre, distancia, origen, destino, tiempo_promedio, tarifa from l_ruta order by id_ruta";
+var thequery = "select id_ruta, nombre, origen, destino, distancia_km, tiempo_min, tarifa, ST_MaxX(extent(geom)) as maxx, ST_MaxY(extent(geom)) as maxy, ST_MinX(extent(geom)) as minx, ST_MinY(extent(geom)) as miny from l_ruta group by id_ruta order by id_ruta";
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', db_path, true);
@@ -13,9 +13,14 @@ xhr.onload = function(e) {
 	
 	for (i = 0; i < elements.length; i++) {
 		var name = elements[i][1];
-		var id = elements[i][0];		
+		var id = elements[i][0];
+		var minx = elements[i][9];
+		var miny = elements[i][10];
+		var maxx = elements[i][7];
+		var maxy = elements[i][8];
+		var bounds = "[["+miny+","+minx+"],["+maxy+","+maxx+"]]";
 		
-		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-info btn-sm btn_ruta" onclick = "loadRoute('+"'"+id+"'"+')">'+name+'</button>';
+		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-info btn-sm btn_ruta" onclick = "loadRoute('+"'"+id+"',"+bounds+')"><p class="h0">'+name+'</p></button>';
 		}
 	}
 		

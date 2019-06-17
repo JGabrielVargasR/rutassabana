@@ -36,6 +36,7 @@ function execute_query(db_path,thequery,map,layerlabel,id_output,style){
 				});
 			/* Add layer to the map if the passed parameter is not false*/
 			dataLayer.setStyle(style);
+			/*set style*/
 			dataLayer.addTo(map);
 			/* Add layer to the layer Control */
 			layerControl.addOverlay(dataLayer, layerlabel);

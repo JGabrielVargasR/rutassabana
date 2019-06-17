@@ -22,48 +22,26 @@ var mpio_style = function (feature) {
       }
     };
 
-var markerIcon = L.icon({
-    iconUrl: '../css/images/marker-icon.png',
-    shadowUrl: '../css/images/marker-shadow.png',
-
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-});
-
 var stopIcon = L.icon({
-    iconUrl: '../css/images/stop-icon.png',
-    shadowUrl: '../css/images/marker-shadow.png',
+    iconUrl: '../../vendor/leaflet/images/stop-icon.png',
 
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
+    iconSize:     [29, 74], // size of the icon
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+	});
+
+var locationIcon = L.icon({
+    iconUrl: '../vendor/leaflet/images/location-icon.png',
+
+    iconSize:     [29, 47], // size of the icon
+    iconAnchor:   [22, 46], // point of the icon which will correspond to marker's location
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+
+var stop = function (feature) {
+        return {icon: stopIcon}
+    };
 
 var ruta_style = function (feature) {
-      if(feature.properties.origen == 'MADRID'){
-        return {color: 'red', weight: 4};
-      } else if(feature.properties.origen == 'MOSQUERA'){
-        return {color: 'orange', weight: 4};
-      } else if(feature.properties.origen == 'BOGOTÁ D.C.'){
-        return {color: 'blue', weight: 4};
-      } else if(feature.properties.origen == 'FUNZA'){
-        return {color: 'green', weight: 4};
-      } else if(feature.properties.origen == 'BOJACÁ'){
-        return {color: 'yellow', weight: 4};
-      } else if(feature.properties.origen == 'EL ROSAL'){
-        return {color: '#66ff66', weight: 4};
-      } else if(feature.properties.origen == 'SUBACHOQUE'){
-        return {color: '#ff00ff', weight: 4};
-      } else if(feature.properties.origen == 'ZIPACÓN'){
-        return {color: '#33ccff', weight: 4};
-      } else if(feature.properties.origen == 'FACATATIVÁ'){
-        return {color: '#800000', weight: 4};
-      } else {
-        return {color: 'gray', weight: 4};
-      }
+        return {color: '#0098DA', weight: 4}
     };
