@@ -1,5 +1,5 @@
-var db_path = "../sqlite/prueba.sqlite";
-var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio, ST_X(geom) as longitude, ST_Y(geom) as latitude from pt_parada, p_municipio  where id_mpio = mpio_divip order by id_parada";
+var db_path = "../sqlite/rutassabana.sqlite";
+var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio, ST_X(pt_parada.geom) as longitude, ST_Y(pt_parada.geom) as latitude from pt_parada, p_municipio  where id_mpio = mpio_divipola order by id_parada";
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', db_path, true);

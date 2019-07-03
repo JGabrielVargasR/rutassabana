@@ -1,4 +1,4 @@
-var db_path = "../sqlite/prueba.sqlite";
+var db_path = "../sqlite/rutassabana.sqlite";
 var thequery = "select id_ruta, nombre, origen, destino, distancia_km, tiempo_min, tarifa, ST_MaxX(extent(geom)) as maxx, ST_MaxY(extent(geom)) as maxy, ST_MinX(extent(geom)) as minx, ST_MinY(extent(geom)) as miny from l_ruta group by id_ruta order by id_ruta";
 
 var xhr = new XMLHttpRequest();

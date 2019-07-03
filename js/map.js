@@ -14,5 +14,9 @@ var overlayMaps = {
 var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 
 var layers = {};
-var db_path = '../sqlite/prueba.sqlite';
-var municipios = execute_query(db_path,"select AsGeoJSON(Geometry), nombre from p_municipio",capas,'Municipios',['#query-output',false],mpio_style);
+var db_path = '../sqlite/rutassabana.sqlite';
+//Capas Tematicas
+
+var corredores = execute_query(db_path,"select AsGeoJSON(geom), id_corredor, nombre from l_corredor",capas,'Corredores',['#query-output',false],corredor_style);
+var municipios = execute_query(db_path,"select AsGeoJSON(geom),mpio_divipola, nombre from p_municipio",capas,'Municipios',['#query-output',false],mpio_style);
+
