@@ -1,5 +1,5 @@
 var db_path = "../sqlite/rutassabana.sqlite";
-var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio, ST_X(pt_parada.geom) as longitude, ST_Y(pt_parada.geom) as latitude from pt_parada, p_municipio  where id_mpio = mpio_divipola order by id_parada";
+var thequery = "select id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as nom_mpio, ST_X(pt_parada.geom) as longitude, ST_Y(pt_parada.geom) as latitude from pt_parada, p_municipio  where pt_parada.id_mpio = p_municipio.id_mpio order by id_parada";
 
 var xhr = new XMLHttpRequest();
 xhr.open('GET', db_path, true);
@@ -18,7 +18,7 @@ xhr.onload = function(e) {
 		var latitude = elements[i][5];
 		var longitude = elements[i][4];
 		
-		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-warning btn-sm btn_parada" onclick="loadPoint('+"'"+id+"',"+latitude+","+longitude+')">'+'<p class="h0">'+name+'</p>'+'<p class="descrip">Municipio: '+mpio+'</p>'+'</button>';
+		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-danger btn-sm btn_parada" onclick="loadPoint('+"'"+id+"',"+latitude+","+longitude+')">'+'<div class = "buttonhead"><img class="img" src="../svg/stop.svg"/></div><p class="h0">'+name+'</p>'+'<p class="descrip"></br><strong>Municipio: </strong>'+mpio+'</p>'+'</button>';
 		}
 	}
 		

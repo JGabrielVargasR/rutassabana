@@ -16,7 +16,7 @@ function loadRoute(id, boundary){
 	capas.clearLayers();
 	var ruta = execute_query(db_path,"select AsGeoJSON(geom), id_ruta, nombre, origen, destino, distancia_km, tiempo_min, tarifa from l_ruta where id_ruta = '"+id+"'",capas,'Ruta',['#query-output',false],ruta_style);
 	
-	var paradas = execute_query(db_path,"select AsGeoJSON(pt_parada.geom), pt_parada.id_parada as id_parada, pt_parada.nombre as nombre, direccion, p_municipio.nombre as municipio from pt_parada, p_municipio, t_ruta_parada where pt_parada.id_parada = t_ruta_parada.id_parada and id_mpio = mpio_divipola and  t_ruta_parada.id_ruta= '"+id+"'",capas,'Paradas',['#query-output',false],stop);
+	var paradas = execute_query(db_path,"select AsGeoJSON(pt_parada.geom), pt_parada.id_parada as id_parada, pt_parada.nombre as nombre, direccion, p_municipio.nombre as municipio from pt_parada, p_municipio, t_ruta_parada where pt_parada.id_parada = t_ruta_parada.id_parada and pt_parada.id_mpio = p_municipio.id_mpio and  t_ruta_parada.id_ruta= '"+id+"'",capas,'Paradas',['#query-output',false],stop);
 	
 	mymap.fitBounds(boundary);
 		

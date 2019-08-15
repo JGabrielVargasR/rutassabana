@@ -16,6 +16,7 @@
 		<script src="../vendor/spatiasql/spatiasql.js"></script>		
 		<script src="../js/fbt_library.js"></script>
 		<script src="../js/styles.js"></script>
+		<script src="../js/route_planning.js"></script>
 		
 		<link rel="shortcut icon" href="../favicon.png"/>
 	</head>
@@ -56,8 +57,13 @@
 							<option value="25473">MOSQUERA</option>
 							<option value="11001">BOGOTÁ D.C.</option>
 						</select>
-						<button type="button" class="btn btn-primary"><img src="../images/search_icon.png" alt="locate_me" width="10">&nbsp;&nbsp;Buscar Ruta</button>
+						</br>
+						<button type="button" class="btn btn-primary botones" onclick = "findRoute()"><img src="../images/search_icon.png" alt="locate_me" width="15">&nbsp;&nbsp;Buscar Ruta</button>
+						<button type="button" class="btn btn-primary botones" onclick = "switchRoute()"><img src="../svg/switch.svg" alt="locate_me" width="15">&nbsp;&nbsp;Invertir Recorrido</button>
 						</div>
+						<div id="routelist" class="routelist">
+							
+						<div>
 					</article>
 					<article id="tab2">
 						<div id="map" class="map2"></div>
