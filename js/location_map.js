@@ -31,7 +31,7 @@ function getLocation(){
 function loadPoint(id, latitude, longitude){
 	capas.clearLayers();
 	var parada = execute_query(db_path,"select asGeoJSON(pt_parada.geom), id_parada, pt_parada.nombre as nom_parada, direccion , p_municipio.nombre as municipio from pt_parada, p_municipio where pt_parada.id_mpio = p_municipio.id_mpio and id_parada = '"+id+"'",capas,'Parada',['#query-output',false],stopIcon);
-	map.setView([latitude, longitude], 18);
+	map.setView([latitude, longitude], 17);
 	}
 	
 function loadPlannedRoute(id, opcion){

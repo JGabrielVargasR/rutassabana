@@ -18,7 +18,7 @@ xhr.onload = function(e) {
 		var latitude = elements[i][5];
 		var longitude = elements[i][4];
 		
-		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-danger btn-sm btn_parada" onclick="loadPoint('+"'"+id+"',"+latitude+","+longitude+')">'+'<div class = "buttonhead"><img class="img" src="../svg/stop.svg"/></div><p class="h0">'+name+'</p>'+'<p class="descrip"></br><strong>Municipio: </strong>'+mpio+'</p>'+'</button>';
+		document.getElementById('routelist').innerHTML += '<button type="button" class="btn btn-danger btn-sm btn_parada" onclick="loadPoint('+"'"+id+"',"+latitude+","+longitude+')">'+'<div class = "buttonhead"><img class="img" src="../svg/stop.svg"/></div><div class = "descrip3"><p class="h0">'+name+'</p>'+'<p class="descrip"><strong>Municipio: </strong>'+mpio+'</p></div>'+'</button>';
 		}
 	}
 		
