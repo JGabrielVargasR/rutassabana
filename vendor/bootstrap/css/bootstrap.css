@@ -6923,7 +6923,7 @@ button.bg-dark:focus {
 .embed-responsive {
   position: relative;
   display: block;
-  width: 100%;
+  /*width: 100%;*/
   padding: 0;
   overflow: hidden;
 }
