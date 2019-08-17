@@ -138,6 +138,17 @@ Estilos Personalizados
 	padding-left:5vw;
 	padding-right:5vw;	
 }
+.section3{
+	font-family: Verdana;
+	font-size: 1rem;
+	padding-top:5vh;
+	padding-left:5vw;
+	padding-right:5vw;
+	position:absolute;
+	float:left;
+	text-align:center;
+	
+}
 
 .wrapper {
   width: 100%;
@@ -257,7 +268,7 @@ article {
 }
 
 .info{
-	font-size:22px;
+	font-size:20px;
 	
 }
 
@@ -273,8 +284,3 @@ article {
 	float:right;
 	width:80%;
 }
-
-.video{
-	height: 40%;
-	padding:10% 2px;
-	}
